@@ -7,7 +7,7 @@
 //
 import Foundation
 
-open class MarkdownParser {
+open class MarkdownParser: NSObject {
   public struct EnabledElements: OptionSet {
     public let rawValue: Int
 
@@ -108,6 +108,7 @@ open class MarkdownParser {
     self.unescapingElements = [code, unescaping]
     self.customElements = customElements
     self.enabledElements = enabledElements
+    super.init()
     updateDefaultElements()
     updateEscapingElements()
     updateUnescapingElements()
