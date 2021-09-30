@@ -7,6 +7,7 @@
 //
 import Foundation
 
+@objcMembers
 open class MarkdownParser: NSObject {
   public struct EnabledElements: OptionSet {
     public let rawValue: Int
@@ -135,6 +136,7 @@ open class MarkdownParser: NSObject {
     return parse(NSAttributedString(string: markdown))
   }
   
+  @objc(parseMarkdown:)
   open func parse(_ markdown: NSAttributedString) -> NSAttributedString {
     let attributedString = NSMutableAttributedString(attributedString: markdown)
     attributedString.addAttribute(.font, value: font,
